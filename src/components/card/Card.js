@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 function Card({ user }) {
   return (
-    <CardContainer>
+    <CardContainer roles={user.roles}>
       <Company>{user.profile.company}</Company>
       <h2>{user.profile.name}</h2>
       <p>{user.profile.about}</p>
@@ -18,7 +18,8 @@ const CardContainer = styled.article`
   padding: 20px;
   background-color: #335;
   border-radius: 14px;
-  border-left: 14px solid #ccd;
+  border-left: 14px solid
+    ${(props) => (props.roles.includes("admin") ? "hotpink" : "#ccd")};
   opacity: 0.8;
   transition: 0.2s;
 
