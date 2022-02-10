@@ -5,7 +5,7 @@ import styled from "styled-components/macro";
 const App = () => {
   return (
     <AppContainer>
-      <h1>ClientBoard</h1>
+      <Title>ClientBoard</Title>
       <CardGrid>
         {USERS.map((user) => (
           <Card user={user} />
@@ -30,4 +30,12 @@ const CardGrid = styled.div`
   grid-template-columns: repeat(4, 1fr); // 1fr 1fr 1fr 1fr
   gap: 30px;
   padding: 20px;
+`;
+
+const Title = styled.h1`
+  border-top: 5px solid #9b9ba7;
+  border-bottom: 5px solid #9b9ba7;
+  border-radius: 5px;
+  color: #fff;
+  padding: 0 8px;
 `;
