@@ -6,7 +6,7 @@ const App = () => {
   return (
     <AppContainer>
       <Title>ClientBoard</Title>
-      <CardGrid>
+      <CardGrid rows={5}>
         {USERS.map((user) => (
           <Card user={user} />
         ))}
@@ -27,7 +27,7 @@ const AppContainer = styled.main`
 
 const CardGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr); // 1fr 1fr 1fr 1fr
+  grid-template-columns: repeat(${(props) => props.rows}, 1fr);
   gap: 30px;
   padding: 20px;
 `;
